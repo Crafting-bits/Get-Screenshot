@@ -13,7 +13,7 @@ class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.screenshot_path = None # Declare "self.screenshot path" with no value at the beginning.
+        self.screenshot_path = None # Declare "self.screenshot_path" with no value at the beginning.
         
         
     def initUI(self):
@@ -38,7 +38,7 @@ class MyWindow(QMainWindow):
         
     def selectFolder(self):
         options = QFileDialog.Options()
-        folder_path = QFileDialog.getExistingDirectory(self, "Seleccionar Carpeta", options=options) # Create variable with the folder location.
+        folder_path = QFileDialog.getExistingDirectory(self, "Select Folder", options=options) # Create variable with the folder location.
         self.screenshot_path = os.path.join(folder_path, "Screenshot.png") # Use "os" library to add name and extension to the file.
         keyboard.add_hotkey('alt+f12', self.getScreenshot) # Create the keyboard shortcut and call getScreenshot(self). This is important, the Shortcut should only be generated after pressing the button.
         
